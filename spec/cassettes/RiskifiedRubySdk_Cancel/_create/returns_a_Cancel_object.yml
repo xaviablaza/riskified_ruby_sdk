@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.riskified.com/api/cancel
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","cancel_reason":"Product out of stock","cancelled_at":"2022-03-15T11:00:00Z"}}'
+    headers:
+      Accept:
+      - application/vnd.riskified.com; version=2
+      Content-Type:
+      - application/json
+      X-Riskified-Shop-Domain:
+      - touchofmodern.com
+      X-Riskified-Hmac-Sha256:
+      - 116feb7c3a8567dd438f3554ebf7dbb4c832f48e4d61dec8159af9e38053cb4a
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Mar 2022 09:59:32 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '181'
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - 937ddce571c849b5c6fef056fa247615
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"f7d38c65e88f981e8793f42b584e57f5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - XSRF-TOKEN=tp0nB22YU78eVqT8lVKe6g1TIvhXuXj7d33uk4E645oIyfIbh40RtqSQN4EsQlrHJ8zsmJdHEGruMoR7HkwEPw;
+        Path=/; SameSite=Lax
+      X-Request-Id:
+      - ab7db696-7257-9e12-9d49-1613ea620d57
+      X-Runtime:
+      - '0.017037'
+      Vary:
+      - Origin
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","status":"cancelled","description":"Excluded
+        by Riskified (due to cancellation)","old_status":"cancelled"},"warnings":["Can
+        not cancel order at this time."]}'
+  recorded_at: Thu, 24 Mar 2022 09:59:32 GMT
+recorded_with: VCR 6.0.0

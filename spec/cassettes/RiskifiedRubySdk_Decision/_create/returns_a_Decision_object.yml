@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.riskified.com/api/decision
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","decision":{"external_status":"approved","reason":"","decided_at":"2022-03-15T13:36:50-04:00","notes":"","amount":145,"currency":"USD"},"gateway":"adyen","payment_details":[]}}'
+    headers:
+      Accept:
+      - application/vnd.riskified.com; version=2
+      Content-Type:
+      - application/json
+      X-Riskified-Shop-Domain:
+      - touchofmodern.com
+      X-Riskified-Hmac-Sha256:
+      - e316d88bc191fde0aeed456085ce5beea025b42f18bad9e9607486921340b246
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Mar 2022 09:59:31 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '131'
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - b427a371c7215361d2843c517859dd25
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"d169fccadce502d5cf79043ace0b1bdd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - XSRF-TOKEN=gVv2RuDrmHpmbERb-wL2oPsu1sxdiESuZUBUm0ZtjoonqabPC7u7AApeoHZJMmcFUOrEsIIO1MXlZRAVhIyQaA;
+        Path=/; SameSite=Lax
+      X-Request-Id:
+      - e9e07818-e9bb-95ae-af78-bc17835bd0e2
+      X-Runtime:
+      - '0.203121'
+      Vary:
+      - Origin
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","status":"cancelled","description":"Excluded
+        by Riskified (due to cancellation)","old_status":"cancelled"}}'
+  recorded_at: Thu, 24 Mar 2022 09:59:31 GMT
+recorded_with: VCR 6.0.0

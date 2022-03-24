@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.riskified.com/api/decide
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","email":"test@approve.com","created_at":"2022-03-15T08:17:00Z","currency":"USD","gateway":"adyen","browser_ip":"183.34.15.26","total_price":145,"total_discounts":null,"note":"
+        ","vendor_name":"My Vendor","source":"desktop_web","submission_reason":"submitted","discount_codes":[{"amount":10,"code":"NewUSER"}],"line_items":[{"price":150,"requires_shipping":true,"quantity":1,"title":"New
+        great product!","sku":"dfn239mndf9","category":"On Sale","brand":"Lovely Products","product_type":"physical"}],"shipping_address":{"first_name":"John","last_name":"Test","company":"outlook","country":"USA","address1":"123
+        smart st","address2":"2","city":"Los Angeles","province":"California","zip":"90210"},"billing_address":{"first_name":"John","last_name":"Test","company":"outlook","country":"USA","address1":"123
+        smart st","address2":"2","city":"Los Angeles","province":"California","zip":"90210"},"client_details":null,"shipping_lines":[{"price":5,"title":"standard","company":"Deliveries
+        INC"}],"customer":{"email":"test@mailmail.com","verified_email":null,"first_name":"John","last_name":"Test","id":"d8fjv234","created_at":"2020-04-15T08:17:00Z","orders_count":11,"account_type":"registered","phone":"+143873984567290"},"payment_details":[{"credit_card_bin":"456789","credit_card_number":"xxxx-xxxx-xxxx-9876","credit_card_company":"VISA"}]}}'
+    headers:
+      Accept:
+      - application/vnd.riskified.com; version=2
+      Content-Type:
+      - application/json
+      X-Riskified-Shop-Domain:
+      - touchofmodern.com
+      X-Riskified-Hmac-Sha256:
+      - f55b5eff45fa33555ba26f0165cb2978614036e8303e102ef0e481ce226c6707
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Mar 2022 09:59:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '121'
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - 75c42cc28b6ce7156ea5627a6ba9c817
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","status":"approved","description":"Reviewed
+        and approved by Riskified","old_status":"submitted"}}'
+  recorded_at: Thu, 24 Mar 2022 09:59:37 GMT
+recorded_with: VCR 6.0.0

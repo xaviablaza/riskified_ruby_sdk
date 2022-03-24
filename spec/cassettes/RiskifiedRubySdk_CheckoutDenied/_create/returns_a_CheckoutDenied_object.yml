@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.riskified.com/api/checkout_denied
+    body:
+      encoding: UTF-8
+      string: '{"checkout":{"id":"1234563","payment_details":[{"credit_card_bin":"414049","avs_result_code":"A","cvv_result_code":"M","credit_card_number":"XXXX-XXXX-XXXX-4242","credit_card_company":"Visa","authorization_error":{"created_at":"2022-03-15T11:00:00-05:00","error_code":"2001","message":"Card
+        was denied."}}]}}'
+    headers:
+      Accept:
+      - application/vnd.riskified.com; version=2
+      Content-Type:
+      - application/json
+      X-Riskified-Shop-Domain:
+      - touchofmodern.com
+      X-Riskified-Hmac-Sha256:
+      - b191b8174f0cacc38c185bb6fe709c05846d89386e50a826f956320aa5db628e
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Mar 2022 10:05:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - 7b8e35bfe51ce792912c60245ef64c8f
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"8a0ed665a96e4707f21831912f67b3c8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - XSRF-TOKEN=nFWOo9MLIA8FLFuYWInhIjnXw4uATn_C7Rc484NedhmqI94blqo6oglNM-v4JzGS9wggs8708D2kHVMvHN2r8w;
+        Path=/; SameSite=Lax
+      X-Request-Id:
+      - 516bd9e1-ee1f-9152-b4a2-fa4c386e2662
+      X-Runtime:
+      - '0.411534'
+      Vary:
+      - Origin
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: '{"checkout":{"id":"1234563","status":"denied"}}'
+  recorded_at: Thu, 24 Mar 2022 10:05:47 GMT
+recorded_with: VCR 6.0.0
