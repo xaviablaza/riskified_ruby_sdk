@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.riskified.com/api/cancel
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","refunds":[{"refund_id":"1235","sku":"ABCD004245","amount":10.5,"refunded_at":"2014-01-10T11:00:00Z","currency":"USD","reason":"Rebate"},{"refund_id":"1238","sku":"EFGH008482","amount":22,"refunded_at":"2014-02-10T11:00:00Z","currency":"USD","reason":"Product
+        not shipped"}]}}'
+    headers:
+      Accept:
+      - application/vnd.riskified.com; version=2
+      Content-Type:
+      - application/json
+      X-Riskified-Shop-Domain:
+      - touchofmodern.com
+      X-Riskified-Hmac-Sha256:
+      - 10d998497f298484bf0f0db3ebf48d7bca0098da6fbf619e9edb277a256a8b2b
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Mar 2022 09:59:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '130'
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - bcb24ebe1142afd93885e98fa76401c6
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"4d2a6eb99992139443242bbb7dda0238"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - XSRF-TOKEN=_f7jU-i1B1-zegKvavN1UOC-2e5b4G0JQFzNCvedc_Ci9SPtu85mSYCG0OU-AbY-aEMlXTtAGIoyvADmLzB-4Q;
+        Path=/; SameSite=Lax
+      X-Request-Id:
+      - d37b811d-9976-9264-ad55-d0ea763be617
+      X-Runtime:
+      - '0.313859'
+      Vary:
+      - Origin
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","status":"cancelled","description":"Excluded
+        by Riskified (due to cancellation)","old_status":"approved"}}'
+  recorded_at: Thu, 24 Mar 2022 09:59:38 GMT
+recorded_with: VCR 6.0.0

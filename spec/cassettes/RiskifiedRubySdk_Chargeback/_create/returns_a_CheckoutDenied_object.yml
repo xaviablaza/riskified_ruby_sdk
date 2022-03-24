@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.riskified.com/api/chargeback
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","chargeback_details":{"id":"15673","chargeback_at":"2016-06-10T15:46:51Z","chargeback_currency":"USD","chargeback_amount":50.5,"reason_code":"4863","type":"cb","gateway":"braintree","reason_description":"Transaction
+        not recognised","mid":"t_123","arn":"a123456789012bc3de45678901f23a45","credit_card_company":"visa","respond_by":"2016-09-01","card_issuer":"Wells
+        Fargo Bank"},"fulfillment":{"fulfillment_id":"12asf123","created_at":"2013-04-23T13:36:50-04:00","status":"success","tracking_company":"fedex","tracking_numbers":"abc123"},"dispute_details":{"case_id":"a1234","status":"won","disputed_at":"2017-06-01","expected_resolution_date":"2017-07-15","dispute_type":"first_dispute"}}}'
+    headers:
+      Accept:
+      - application/vnd.riskified.com; version=2
+      Content-Type:
+      - application/json
+      X-Riskified-Shop-Domain:
+      - touchofmodern.com
+      X-Riskified-Hmac-Sha256:
+      - c5134ab6e72f143b40cdc1d4d7f2adcad418bfd5267b9387f9d206ea6aeb9d54
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Mar 2022 10:12:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '147'
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - e5363f08a414cc4e4b86e2a0248be098
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "order" : {
+            "id" : "123456",
+            "status" : "chargeback",
+            "old_status" : "cancelled",
+            "description" : "Received by Riskified"
+          }
+        }
+  recorded_at: Thu, 24 Mar 2022 10:12:44 GMT
+recorded_with: VCR 6.0.0

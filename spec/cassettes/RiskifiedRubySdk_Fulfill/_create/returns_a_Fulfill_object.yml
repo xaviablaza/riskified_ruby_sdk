@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.riskified.com/api/fulfill
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","fulfillments":[{"created_at":"2013-04-23T13:36:50-04:00","status":"success","tracking_company":"fedex","tracking_numbers":"abc123","tracking_urls":"http://fedex.com/track?q=abc123","message":"estimated
+        delivery 2 days","receipt":"authorization: 765656"},{"created_at":"2013-04-23T13:36:50-04:00","status":"failure","message":"item
+        out of stock"}]}}'
+    headers:
+      Accept:
+      - application/vnd.riskified.com; version=2
+      Content-Type:
+      - application/json
+      X-Riskified-Shop-Domain:
+      - touchofmodern.com
+      X-Riskified-Hmac-Sha256:
+      - 3bd85783c763c2d4b9c35c4116d667b7a50f3ba3cf1dd0e84350003c1c517251
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Mar 2022 09:59:41 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '46'
+      Connection:
+      - keep-alive
+      Trace-Id:
+      - 5187facfa02bfc6aac35f2646d87b917
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"46fe600f0f58bee8188a442bac35f26b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - XSRF-TOKEN=OB4X0Qz-o5Lr687YXIlQcxNgsWV2-wE-bCH5gYPEM3q75lc9AyUJxPQM8nku1JBfPBjuTF_VUo7yjm_USLP7uA;
+        Path=/; SameSite=Lax
+      X-Request-Id:
+      - abe969a3-b7a8-9c00-9534-fd00c06b0e4c
+      X-Runtime:
+      - '0.053321'
+      Vary:
+      - Origin
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":"123456","status":"fulfilled"}}'
+  recorded_at: Thu, 24 Mar 2022 09:59:41 GMT
+recorded_with: VCR 6.0.0
