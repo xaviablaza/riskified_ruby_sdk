@@ -7,6 +7,8 @@ module RiskifiedRubySdk
       def create(data, client:)
         decision = client.post(path, data).with_indifferent_access
         build decision
+      rescue NoMethodError => _e
+        Error.new("NoMethodError: #{data}")
       end
 
       private

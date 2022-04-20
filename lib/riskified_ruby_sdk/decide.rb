@@ -23,13 +23,15 @@ module RiskifiedRubySdk
       def create(data, client:)
         decide = client.post(path, data).with_indifferent_access
         build decide
+      rescue NoMethodError => _e
+        Error.new("NoMethodError: #{data}")
       end
 
       private
 
       def build(decide)
         order = decide[:order]
-        new(order[:id], order[:status], order[:description], order[:old_status])
+        new(order[:id], order[:status], order[:description], order[:old_status], order[:category])
       end
 
       def path
@@ -37,12 +39,13 @@ module RiskifiedRubySdk
       end
     end
 
-    def initialize(order_id, order_status, order_description, order_old_status)
+    def initialize(order_id, order_status, order_description, order_old_status, category)
       @order_id = order_id
       @order_status = order_status
       @order_description = order_description
       @order_old_status = order_old_status
+      @category = category
     end
-    attr_reader :order_id, :order_status, :order_description, :order_old_status
+    attr_reader :order_id, :order_status, :order_description, :order_old_status, :category
   end
 end

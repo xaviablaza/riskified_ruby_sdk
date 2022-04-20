@@ -7,6 +7,8 @@ module RiskifiedRubySdk
       def create(data, client:)
         partial_refund = client.post(path, data).with_indifferent_access
         build partial_refund
+      rescue NoMethodError => _e
+        Error.new("NoMethodError: #{data}")
       end
 
       private
