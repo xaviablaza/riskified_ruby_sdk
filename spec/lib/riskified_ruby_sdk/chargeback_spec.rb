@@ -8,7 +8,7 @@ RSpec.describe RiskifiedRubySdk::Chargeback do
         c.shop_domain = CONFIG[:shop_domain]
       end
     end
-    it "returns a CheckoutDenied object", vcr: { record: :once, match_requests_on: %i[method] } do
+    it "returns a Chargeback object", vcr: { record: :once, match_requests_on: %i[method] } do
       client = RiskifiedRubySdk::Client.new(sandbox: true)
       data = {
         order: {
@@ -48,8 +48,6 @@ RSpec.describe RiskifiedRubySdk::Chargeback do
         data,
         client: client
       )
-
-      binding.pry
 
       expect(chargeback).to be_a(RiskifiedRubySdk::Chargeback)
     end
