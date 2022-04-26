@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.riskified.com/api/cancel
+    uri: https://sandbox.riskified.com/api/refund
     body:
       encoding: UTF-8
       string: '{"order":{"id":"123456","refunds":[{"refund_id":"1235","sku":"ABCD004245","amount":10.5,"refunded_at":"2014-01-10T11:00:00Z","currency":"USD","reason":"Rebate"},{"refund_id":"1238","sku":"EFGH008482","amount":22,"refunded_at":"2014-02-10T11:00:00Z","currency":"USD","reason":"Product
@@ -26,15 +26,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 24 Mar 2022 09:59:38 GMT
+      - Tue, 26 Apr 2022 04:18:58 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '130'
+      - '131'
       Connection:
       - keep-alive
       Trace-Id:
-      - bcb24ebe1142afd93885e98fa76401c6
+      - f260fce1c820a40bf465c53dd909381d
       Status:
       - 200 OK
       X-Frame-Options:
@@ -50,16 +50,16 @@ http_interactions:
       Referrer-Policy:
       - strict-origin-when-cross-origin
       Etag:
-      - W/"4d2a6eb99992139443242bbb7dda0238"
+      - W/"d169fccadce502d5cf79043ace0b1bdd"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - XSRF-TOKEN=_f7jU-i1B1-zegKvavN1UOC-2e5b4G0JQFzNCvedc_Ci9SPtu85mSYCG0OU-AbY-aEMlXTtAGIoyvADmLzB-4Q;
+      - XSRF-TOKEN=4CxjqwIyWV_cACnVoRAzIO_ND12usDkhmu6fBDtIz-fPKBcWXpMDw_GX8XF1NVunEPOZ6kaEduAqjLEHpOtgOg;
         Path=/; SameSite=Lax
       X-Request-Id:
-      - d37b811d-9976-9264-ad55-d0ea763be617
+      - e2a4c21c-612c-9cfb-a3e9-2364c81a8e1c
       X-Runtime:
-      - '0.313859'
+      - '0.163558'
       Vary:
       - Origin
       Server:
@@ -67,6 +67,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"order":{"id":"123456","status":"cancelled","description":"Excluded
-        by Riskified (due to cancellation)","old_status":"approved"}}'
-  recorded_at: Thu, 24 Mar 2022 09:59:38 GMT
+        by Riskified (due to cancellation)","old_status":"cancelled"}}'
+  recorded_at: Tue, 26 Apr 2022 04:18:58 GMT
 recorded_with: VCR 6.0.0
