@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    riskified_ruby_sdk (0.1.0)
+    riskified_ruby_sdk (0.2.1)
       activesupport (~> 5.0.7.2)
       gem_config
       httparty

@@ -19,7 +19,7 @@ module RiskifiedRubySdk
       end
 
       def path
-        "cancel"
+        "refund"
       end
     end
 

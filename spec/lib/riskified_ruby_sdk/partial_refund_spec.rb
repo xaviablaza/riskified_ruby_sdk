@@ -8,7 +8,7 @@ RSpec.describe RiskifiedRubySdk::PartialRefund do
         c.shop_domain = CONFIG[:shop_domain]
       end
     end
-    it "returns a Cancel object", vcr: { record: :once, match_requests_on: %i[method] } do
+    it "returns a PartialRefund object", vcr: { record: :once, match_requests_on: %i[method] } do
       client = RiskifiedRubySdk::Client.new(sandbox: true)
       data = {
         order: {
