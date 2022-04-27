@@ -8,7 +8,7 @@ module RiskifiedRubySdk
         checkout_denied = client.post(path, data).with_indifferent_access
         build checkout_denied
       rescue NoMethodError => _e
-        Error.new("NoMethodError: #{data}")
+        Error.new("NoMethodError: #{data}, checkout_denied: #{checkout_denied}")
       end
 
       private

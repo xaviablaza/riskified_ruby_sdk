@@ -24,7 +24,7 @@ module RiskifiedRubySdk
         decide = client.post(path, data).with_indifferent_access
         build decide
       rescue NoMethodError => _e
-        Error.new("NoMethodError: #{data}")
+        Error.new("NoMethodError: #{data}, decide: #{decide}")
       end
 
       private
