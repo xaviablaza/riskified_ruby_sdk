@@ -8,7 +8,7 @@ module RiskifiedRubySdk
         cancel = client.post(path, data).with_indifferent_access
         build cancel
       rescue NoMethodError => _e
-        Error.new("NoMethodError: #{data}")
+        Error.new("NoMethodError: #{data}, cancel: #{cancel}")
       end
 
       private

@@ -8,7 +8,7 @@ module RiskifiedRubySdk
         chargeback = client.post(path, data).with_indifferent_access
         build chargeback
       rescue NoMethodError => _e
-        Error.new("NoMethodError: #{data}")
+        Error.new("NoMethodError: #{data}, chargeback: #{chargeback}")
       end
 
       private

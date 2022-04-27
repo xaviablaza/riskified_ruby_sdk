@@ -8,7 +8,7 @@ module RiskifiedRubySdk
         fulfill = client.post(path, data).with_indifferent_access
         build fulfill
       rescue NoMethodError => _e
-        Error.new("NoMethodError: #{data}")
+        Error.new("NoMethodError: #{data}, fulfill: #{fulfill}")
       end
 
       private
