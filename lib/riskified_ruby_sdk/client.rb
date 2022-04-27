@@ -31,7 +31,7 @@ module RiskifiedRubySdk
     def base_url
       return SANDBOX_API_ENDPOINT if @sandbox
 
-      API_ENDPOINT
+      PRODUCTION_API_ENDPOINT
     end
 
     # Returns a String with the path appended to the base_url
